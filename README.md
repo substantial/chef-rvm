@@ -1,9 +1,9 @@
-# Description
+# <a name="description"></a> Description
 
 Manages system-wide and per-user [RVM][rvm]s and manages installed Rubies.
 Several lightweight resources and providers ([LWRP][lwrp]) are also defined.
 
-# Requirements
+# <a name="requirements"></a> Requirements
 
 ## Chef
 
@@ -32,7 +32,7 @@ There are **no** external cookbook dependencies. However, if you are
 installing [JRuby][jruby] then a Java runtime will need to be installed.
 The Opscode [java cookbook][java_cb] can be used on supported platforms.
 
-# Installation
+# <a name="installation"></a> Installation
 
 Depending on the situation and use case there are several ways to install
 this cookbook. All the methods listed below assume a tagged version release
@@ -89,7 +89,7 @@ Server or Opscode Hosted Chef, then a tarball installation might fit the bill:
 This cookbook is not currently available on the site due to the flat
 namespace for cookbooks. There is some community work to be done here.
 
-# Usage
+# <a name="usage"></a> Usage
 
 ## RVM Installed System-Wide with Rubies
 
@@ -146,7 +146,7 @@ provision executions.
 you can try including `recipe[rvm::gem_package]` in your run_list. Please
 read the recipe details before attempting.
 
-# Recipes
+# <a name="recipes"></a> Recipes
 
 ## default
 
@@ -213,7 +213,7 @@ other cookbooks during the compilation phase.
 **Warning:** [Here be dragons][dragons]! This is either brilliant or the
 dumbest idea ever, so feedback is appreciated.
 
-# Attributes
+# <a name="attributes"></a> Attributes
 
 ## default_ruby
 
@@ -490,7 +490,7 @@ If using the `vagrant` recipe, this sets the path to the package-installed
 
 The default is `"/opt/ruby/bin/chef-solo"`.
 
-# Resources and Providers
+# <a name="lwrps"></a> Resources and Providers
 
 ## rvm_ruby
 
@@ -835,7 +835,7 @@ under `node['rvm']['root_path']`.
       action        :create
     end
 
-# Development
+# <a name="development"></a> Development
 
 * Source hosted at [GitHub][repo]
 * Report issues/Questions/Feature requests on [GitHub Issues][issues]
@@ -843,7 +843,7 @@ under `node['rvm']['root_path']`.
 Pull requests are very welcome! Make sure your patches are well tested.
 Ideally create a topic branch for every seperate change you make.
 
-# License and Author
+# <a name="license"></a> License and Author
 
 Author:: [Fletcher Nichol][fnichol] (<fnichol@nichol.ca>)
 
