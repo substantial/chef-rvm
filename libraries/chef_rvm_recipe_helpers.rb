@@ -167,14 +167,14 @@ class Chef
         opts[:rubies].each do |rubie|
           if rubie.is_a?(Hash)
             ruby = rubie.fetch("version")
-            ruby_patch = rubie.fetch("patch")
+            ruby_options = rubie.fetch("options")
           else
             ruby = rubie
-            ruby_patch = nil
+            ruby_options = nil
           end
 
           rvm_ruby ruby do
-            patch ruby_patch
+            options ruby_options
             user  opts[:user]
           end
         end

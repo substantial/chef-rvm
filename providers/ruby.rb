@@ -24,6 +24,7 @@ include Chef::RVM::RubyHelpers
 
 def load_current_resource
   @rubie        = normalize_ruby_string(select_ruby(new_resource.ruby_string))
+  @options      = new_resource.options || {}
   @ruby_string  = new_resource.ruby_string
   @rvm_env      = ::RVM::ChefUserEnvironment.new(new_resource.user)
 end
@@ -40,7 +41,7 @@ action :install do
 
     Chef::Log.info("Building rvm_ruby[#{@rubie}], this could take awhile...")
 
-    if @rvm_env.install(@rubie)
+    if @rvm_env.install(@rubie, @options)
       Chef::Log.info("Installation of rvm_ruby[#{@rubie}] was successful.")
       @rvm_env.use @rubie
       update_installed_rubies
