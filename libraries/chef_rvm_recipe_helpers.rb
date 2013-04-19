@@ -22,16 +22,16 @@
 class Chef
   module RVM
     module RecipeHelpers
-      def build_script_flags(version, branch)
+      def build_script_flags(version, branch, autolibs = "enabled")
         script_flags = ""
         if version || (branch && branch != "none")
           script_flags += " -s --"
         end
         if version
-          script_flags += " --version #{version}"
+          script_flags += " --version #{version} --autolibs=#{autolibs}"
         end
         if branch && branch != "none"
-          script_flags += " --branch #{branch}"
+          script_flags += " --branch #{branch} --autolibs=#{autolibs}"
         end
         script_flags
       end
